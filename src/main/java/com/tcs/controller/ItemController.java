@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tcs.bean.Item;
 
 @RestController
-@RequestMapping("/Item")
+@RequestMapping("/item")
 public class ItemController {
 	
 	List<Item> items = new ArrayList<Item>();
@@ -45,7 +45,7 @@ public class ItemController {
 		return item;
 	}
 	
-	@RequestMapping(value="/getAllItems", produces = "application/json")
+	@RequestMapping(value="/getAllItems", produces = "application/json", method = RequestMethod.GET)
 	public List<Item> getAllItems() {
 		return items;
 	}
