@@ -7,7 +7,7 @@ public interface ItemConstants {
 	public static final String SUCCESS_STATUS = "Success";
 	public static final String ERROR_STATUS = "Failure";
 	
-	public static final String CUSTOMER_ADD_MESSAGE = "New Item added successfully.";
-	public static final String CUSTOMER_UPDATE_MESSAGE = "Item updated successfully.";
+	public static final String ITEM_ADD_MESSAGE = "New Item added successfully.";
+	public static final String ITEM_UPDATE_MESSAGE = "Item updated successfully.";
 
 }

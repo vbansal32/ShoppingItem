@@ -37,6 +37,7 @@ public class ItemController implements ItemConstants {
 		List<Item> items = new ArrayList<>();
 		items.add(itemService.findItemById(itemId));
 		itemResponse.setItems(items);
+		itemResponse.setStatus(SUCCESS_STATUS);
 		return itemResponse;
 	}
 	
@@ -44,6 +45,7 @@ public class ItemController implements ItemConstants {
 	public ItemResponse getAllItems() {
 		itemResponse = context.getBean(ItemResponse.class);
 		itemResponse.setItems(itemService.findAllItems());
+		itemResponse.setStatus(SUCCESS_STATUS);
 		return itemResponse;
 	}
 	
@@ -53,9 +55,13 @@ public class ItemController implements ItemConstants {
 		try {
 			Item item = new ObjectMapper().readValue(itemString, Item.class);
 			itemService.addItem(item);
+			itemResponse.setStatus(SUCCESS_STATUS);
+			itemResponse.setMessage(ITEM_ADD_MESSAGE);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
+			itemResponse.setStatus(ERROR_STATUS););
+			itemResponse.setMessage(GENERAL_ERROR_MESSAGE);
 		}
 		return itemResponse;
 	}
@@ -66,9 +72,14 @@ public class ItemController implements ItemConstants {
 		try {
 			Item item = new ObjectMapper().readValue(itemString, Item.class);
 			itemService.updateItem(item);
+			itemResponse.setStatus(SUCCESS_STATUS);
+			itemResponse.setMessage(ITEM_UPDATE_MESSAGE);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
+
+			itemResponse.setStatus(ERROR_STATUS););
+			itemResponse.setMessage(GENERAL_ERROR_MESSAGE);
 		}
 		return itemResponse;
 	}
