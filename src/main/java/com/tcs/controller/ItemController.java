@@ -60,7 +60,7 @@ public class ItemController implements ItemConstants {
 		}
 		catch (IOException e) {
 			e.printStackTrace();
-			itemResponse.setStatus(ERROR_STATUS););
+			itemResponse.setStatus(ERROR_STATUS);
 			itemResponse.setMessage(GENERAL_ERROR_MESSAGE);
 		}
 		return itemResponse;
@@ -78,7 +78,7 @@ public class ItemController implements ItemConstants {
 		catch (IOException e) {
 			e.printStackTrace();
 
-			itemResponse.setStatus(ERROR_STATUS););
+			itemResponse.setStatus(ERROR_STATUS);
 			itemResponse.setMessage(GENERAL_ERROR_MESSAGE);
 		}
 		return itemResponse;
